@@ -3,8 +3,9 @@ CREATE DATABASE `db_kattte` DEFAULT CHARACTER SET utf8;
 -- ユーザーテーブル
 CREATE TABLE katte_user (
   id BIGINT UNSIGNED (20) AUTO_INCREMENT,
-  user_name VARCHAR(255) NOT NULL,
+  user_name VARCHAR(255) NOT NULL UNIQUE,
   user_hash VARCHAR(255) NOT NULL,
+  registration_id VARCHAR(255) NOT NULL,
   grade INTEGER NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT 0,
   updated_at TIMESTAMP NOT NULL DEFAULT 0,
@@ -75,12 +76,13 @@ INSERT INTO max_mention_count_by_grade SET grade = 5, max_mention_count = -1; /*
 CREATE TABLE notification_master (
   id INTEGER UNSIGNED AUTO_INCREMENT,
   description VARCHAR(255) NOT NULL,
+  message VARCHAR(255) NOT NULL,
   duration INTEGER DEFAULT 60,
   created_at TIMESTAMP NOT NULL DEFAULT 0,
   updated_at TIMESTAMP NOT NULL DEFAULT 0,
   PRIMARY KEY (id),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO notificatino_master SET description = '1分置き', duration = 60;
-INSERT INTO notificatino_master SET description = '5分置き', duration = 300;
-INSERT INTO notificatino_master SET description = '10分置き', duration = 600;
-INSERT INTO notificatino_master SET description = '60分置き', duration = 3600;
+INSERT INTO notificatino_master SET description = '1分置き', duration = 60, message = 'さっさと買えよばかやろう';
+INSERT INTO notificatino_master SET description = '5分置き', duration = 300, message = 'いい加減買ったほうがいい';
+INSERT INTO notificatino_master SET description = '10分置き', duration = 600, message = '購入するだけでこの通知は止まります';
+INSERT INTO notificatino_master SET description = '60分置き', duration = 3600, message = 'あなたの購入を待っています';
