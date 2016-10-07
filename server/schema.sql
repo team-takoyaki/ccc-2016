@@ -30,7 +30,7 @@ CREATE TABLE katte_items (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- mention 管理テーブル(katte_user_id がどれだけメンションされてるか見るため)
-CREATE TABLE mention (
+CREATE TABLE mentions (
   id BIGINT UNSIGNED (20) AUTO_INCREMENT,
   from_katte_user_id BIGINT UNSIGNED (20) NOT NULL,
   to_katte_user_id BIGINT UNSIGNED (20) NOT NULL,
@@ -43,9 +43,10 @@ CREATE TABLE mention (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- extension から定期的に叩かれてどれくらいの通知が必要かどうかを返すための管理テーブル(current_timestamp - last_notification_at > notification_master.duration なら true 返す)
-CREATE TABLE notification (
+CREATE TABLE notifications (
   id BIGINT UNSIGNED (20) AUTO_INCREMENT,
   katte_user_id BIGINT UNSIGNED (20) NOT NULL,
+  notification_item_id BIGINT UNSIGNED(20) NOT NULL,
   notification_master_id INTEGER UNSIGNED NOT NULL,
   last_notification_at VARCHAR(255) NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT 0,
