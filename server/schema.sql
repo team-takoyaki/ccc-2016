@@ -19,6 +19,7 @@ CREATE TABLE katte_items (
   katte_user_id VARCHAR(255) NOT NULL,
   item_name VARCHAR(255) NOT NULL,
   item_description VARCHAR(255) NOT NULL,
+  image_name VARCHAR(255) NOT NULL,
   is_purchased TINYINT(1) NOT NULL DEFAULT 0,
   mention_user_id BIGINT (20) DEFAULT 0,
   created_at TIMESTAMP NOT NULL DEFAULT 0,
