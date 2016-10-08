@@ -67,7 +67,7 @@
                       <p class="dateStart"><?php echo $item['created_at']; ?></p>
                       <p class="dateTxt">UP DATE</p>
                     </div>
-                    <button type="submit" class="btnSellOn">アイテム詳細</button>
+                    <a class="btnSellOn">アイテム詳細</a>
                   </a>
                 </li>
                 <?php } ?>
@@ -112,7 +112,7 @@
             <form method="post" action="/buy">
               <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
               <input type="hidden" name="user_hash" value="" id="user_hash">
-              <a class="btnSellOn modalBtn">購入する</a>
+              <button type="submit" class="btnSellOn modalBtn">購入する</button>
             </form>
           </div>
         </div>
