@@ -339,8 +339,8 @@ modal.hmtl
 
 
 .imgSell {
-    max-width: 220px;
-    max-height: 220px;
+    width: 220px;
+    height: 220px;
 }
 
 #openSite{
