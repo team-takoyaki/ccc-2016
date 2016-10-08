@@ -327,3 +327,7 @@ modal.hmtl
     left: 430px;
     width: 44px;
 }
+
+.sellFormDescription {
+    height: 100px;
+}

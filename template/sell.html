@@ -48,34 +48,34 @@
     <div id="body">
       <div id="content">
         <article class="baseCell clearfix">
-          <form>
+          <form method="post" actioin="/sell">
             <section class="sellCenterWrap">
               <dl>
                 <dt class="sellFormTtl">アイテム名</dt>
                 <dd>
-                  <input class="sellForm" type="text" value="30文字以内でタイトルをつけてね">
+                  <input class="sellForm" type="text" name="item_name" placeholder="10文字くらいでアイテム名をつけてね">
                 </dd>
                 <dt class="sellFormTtl">アイテム説明</dt>
                 <dd>
-                  <input class="sellForm sellFormItemDes" type="text" value="60文字以内でタイトルをつけてね">
+                  <textarea name="item_description" placeholder="100文字くらいで説明を入れてね" class="sellForm sellFormDescription"></textarea>
                 </dd>
                 <dt class="sellFormTtl">アイテム画像を選択</dt>
                 <dd>
-                  <input type="file" name="file">
+                  <input type="file" name="image">
                 </dd>
                 <dt class="sellFormTtl">売りつける人を選択</dt>
                 <dd>
-                  <select>
-                    <option value="name">瀬川</option>
-                    <option value="name">瀬川</option>
+                  <select name="mention_user_name">
+                    <option value="瀬川">瀬川</option>
+                    <option value="瀬川">瀬川</option>
                   </select>
                 </dd>
                 <dt class="sellFormTtl">金額入力</dt>
                 <dd>
-                  <input class="sellForm" type="text" value="¥0">
+                  <input class="sellForm" type="text" name="price" value="0">
                 </dd>
                 <dd>
-                  <input class="sellFormOff" type="submit" placeholder="¥0" value="送信">
+                  <input class="sellFormOff" type="submit" value="送信">
                 </dd>
               </dl>
             </section>
