@@ -12,12 +12,14 @@ function get_pdo() {
     return $pdo;
 }
 
-dispatch('/', 'hello');
-function hello() {
-    $pdo = get_pdo();
-    $stmt = $pdo->query("SELECT * FROM max_mention_count_by_grade");
-    $count = $stmt->rowCount();
-    return 'Hello world! honda' . $count . 'h';
+dispatch('/', 'index');
+function index() {
+  return html('index.html');
+}
+
+dispatch('/sell', 'sell');
+function sell() {
+  return html('sell.html');
 }
 
 run();
