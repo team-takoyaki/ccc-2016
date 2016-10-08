@@ -143,6 +143,12 @@ function sell() {
         }
 
     } else {
+        $pdo = get_pdo();
+        $query = 'select user_name from katte_user;';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        set('users', $result);
         return html('sell.html');
     }
 }
