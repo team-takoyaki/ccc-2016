@@ -45,85 +45,91 @@
         </div>
       </header>
       <nav id="secondMenu">
-          <img src="img/ttl_all_item.png" alt="一覧" height="30px">
+        <img src="img/ttl_all_item.png" alt="一覧" height="30px">
+      </nav>
+      <div id="body">
+        <a href="/sell"><img src="img/btn_purchase.png" alt="購入する" class="btnPurchase" height="150px"></a>
+        <div id="content">
+          <article class="baseCell">
+            <section id="allItem">
+              <ul class="clearfix">
+                <?php foreach ($items as $item) {?>
+                <?php   if ($item['is_purchased']) { ?>
+                <li class="itemOffWrap">
+                  <?php   } else { ?>
+                <li>
+                  <a href="#modal-<?php echo $item['id'];?>">
+                    <?php   } ?>
+                    <p class="useNameTxt"><?php echo $item['user_name']; ?></p>
+                    <img src="files/<?php echo $item['image_name']; ?>" alt="これはdummy" class="imgSell">
+                    <p class="ttlItem"><?php echo $item['item_name']; ?></p>
+                    <div class="statusDateWrap clearfix">
+                      <p class="dateStart"><?php echo $item['created_at']; ?></p>
+                      <p class="dateTxt">UP DATE</p>
+                    </div>
+                    <p class="btnSellOn">アイテム詳細</p>
+                  </a>
+                </li>
+                <?php } ?>
+              </ul>
+            </section>
+            <!--
+                むーにゃー　むーにゃ
+                　　　　　　　lヽ、　　　 　 　 　 　 /ヽ
+                　　　　　　　 　 　i!　ﾞヽ、 　 　　　　／ 　ﾞi!　　　　　 ..,,　.,,.;;''⌒ヽ
+                　　　　 　 　 　 　l　　　 ゝ-─‐-／'　　　 i!　 , ,__,,;'"　 "';　　　 ,ﾉ
+                　　　　　　　　　,／"　　　　　　　 　 　　　i!''"　 ....ﾞ'';;..,,;;　　,,Y"
+                　　　　　　　　,/'　　　　　　　　　　　　　 〈　　　　　　　　　'i;;- ､,,　　
+                　　　　 　 　　i'　　　　　　　    　　　　 'i,　　　　　　　　 　　 　 ﾞ"ヽ、　
+                　　　 　 　 　 i!　●　　　　　●　　 　　　 ,'i　　　　　　　　　　 　　　　ﾞ）
+                　　　　　　　　'i,:::(_____） 　 　:::::::　　,/　　　　'　　　　　ﾞ",;''i,-‐'"
+                　　　　　,,-‐''"ヽ､ 　 　　　　　　　 ,,-‐　　　　　　　　　,..;;;ﾞ"
+                　　　　（　　　　,,, '' 　　　　 ,,.-‐''"　　　　　　　,,'"´｀`´
+                　　　　 ヽ,..-‐''　　　 ,.-‐''"　　　　　　ノ-‐''"´ 　
+                　　　　　　　　　　　（　　　　　　 ,. -'"
+                　　　　　　　　　　　 ヽ、,,.. -‐'''"
+              -->
+          </article>
+        </div><!--#content -->
+      </div><!--#body-->
+      <section class="footer">
+        <div class="copylight">COPYRIGHT © Office KITANO CO.,LTD. ALL RIGHTS RESERVED.</div>
+      </section>
+      <div class="remodal-bg"></div>
+      <?php foreach ($items as $item) {?>
+      <?php   if ($item['is_purchased']) { continue; }?>
+      <div class="remodal" data-remodal-id="modal-<?php echo $item['id']; ?>">
+        <div class="modalWrap">
+          <div class="modalColumn">
+            <img src="img/btn_popup.png" class="closeButton" data-remodal-action="close">
+            <img  class="ttlModal" src="img/ttl_buy.png" alt="購入">
+            <img class="dummyImage" src="files/<?php echo $item['image_name']; ?>">
+            <?php if (isset($item_info[$item['item_name']])) {?>
+            <p class="userName"><?php echo $item_info[$item['item_name']]; ?></p>
+            <?php } ?>
+            <p class="ttlItem"><?php echo $item['item_name']; ?></p>              
+            <p class="itemTxt"><?php echo $item['item_description']; ?></p>
+            <a class="btnSellOn modalBtn">奪い取る</a>
+          </div>
         </div>
-    </nav>
-    <div id="body">
-      <a href="/sell"><img src="img/btn_purchase.png" alt="購入する" class="btnPurchase" height="150px"></a>
-      <div id="content">
-        <article class="baseCell">
-          <section id="allItem">
-            <ul class="clearfix">
-<?php foreach ($items as $item) {?>
-<?php   if ($item['is_purchased']) { ?>
-              <li class="itemOffWrap">
-<?php   } else { ?>
-              <li>
-                <a href="#modal-<?php echo $item['id'];?>">
-<?php   } ?>
-                  <p class="useNameTxt"><?php echo $item['user_name']; ?></p>
-                  <img src="files/<?php echo $item['image_name']; ?>" alt="これはdummy" class="imgSell">
-                  <p class="ttlItem"><?php echo $item['item_name']; ?></p>
-                  <div class="statusDateWrap clearfix">
-                    <p class="dateStart"><?php echo $item['created_at']; ?></p>
-                    <p class="dateTxt">UP DATE</p>
-                  </div>
-                  <p class="btnSellOn">アイテム詳細</p>
-                </a>
-              </li>
-<?php } ?>
-            </ul>
-          </section>
-          <!--
-              むーにゃー　むーにゃ
-              　　　　　　　lヽ、　　　 　 　 　 　 /ヽ
-              　　　　　　　 　 　i!　ﾞヽ、 　 　　　　／ 　ﾞi!　　　　　 ..,,　.,,.;;''⌒ヽ
-              　　　　 　 　 　 　l　　　 ゝ-─‐-／'　　　 i!　 , ,__,,;'"　 "';　　　 ,ﾉ
-              　　　　　　　　　,／"　　　　　　　 　 　　　i!''"　 ....ﾞ'';;..,,;;　　,,Y"
-              　　　　　　　　,/'　　　　　　　　　　　　　 〈　　　　　　　　　'i;;- ､,,　　
-              　　　　 　 　　i'　　　　　　　    　　　　 'i,　　　　　　　　 　　 　 ﾞ"ヽ、　
-              　　　 　 　 　 i!　●　　　　　●　　 　　　 ,'i　　　　　　　　　　 　　　　ﾞ）
-              　　　　　　　　'i,:::(_____） 　 　:::::::　　,/　　　　'　　　　　ﾞ",;''i,-‐'"
-              　　　　　,,-‐''"ヽ､ 　 　　　　　　　 ,,-‐　　　　　　　　　,..;;;ﾞ"
-              　　　　（　　　　,,, '' 　　　　 ,,.-‐''"　　　　　　　,,'"´｀`´
-              　　　　 ヽ,..-‐''　　　 ,.-‐''"　　　　　　ノ-‐''"´ 　
-              　　　　　　　　　　　（　　　　　　 ,. -'"
-              　　　　　　　　　　　 ヽ、,,.. -‐'''"
-            -->
-        </article>
-      </div><!--#content -->
-    </div><!--#body-->
-    <section class="footer">
-      <div class="copylight">COPYRIGHT © Office KITANO CO.,LTD. ALL RIGHTS RESERVED.</div>
-    </section>
-    <div class="remodal-bg"></div>
-<?php foreach ($items as $item) {?>
-<?php   if ($item['is_purchased']) { continue; }?>
-    <div class="remodal" data-remodal-id="modal-<?php echo $item['id']; ?>">
-          <div class="modalWrap">
-            <div class="modalColumn">
-                <img src="img/btn_popup.png" class="closeButton" data-remodal-action="close">
-                <img  class="ttlModal" src="img/ttl_buy.png" alt="購入">
-                <img class="dummyImage" src="files/<?php echo $item['image_name']; ?>">
-<?php if (isset($item_info[$item['item_name']])) {?>
-                <p class="userName"><?php echo $item_info[$item['item_name']]; ?></p>
-<?php } ?>
-                <p class="ttlItem"><?php echo $item['item_name']; ?></p>              
-                <p class="itemTxt"><?php echo $item['item_description']; ?></p>
-                <a class="btnSellOn modalBtn">奪い取る</a>
-            </div>
+      </div>
+    <?php } ?>
+    </div>
+    <div id="not_login_layout">
+      <header>
+        <div id="menuWrapper" class="clearfix">
+          <div id="menuWapperRight" class="clearfix">
+            <h1 id="headerLogoImage">
+              <a href="/">Katte - Katteで買って圧倒的に健康になろう</a>
+            </h1>
           </div>
         </div>
       </header>
-      <div id="body">
-         <!--- <ここ>-->
-      </div>
+    <div id="body">
+      <!--- <ここ>-->
     </div>
-<?php } ?>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/remodal.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </body>
-  </div>
-</div>
 </html>
