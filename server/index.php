@@ -14,12 +14,33 @@ function get_pdo() {
 
 dispatch('/', 'index');
 function index() {
-  return html('index.html');
+    return html('index.html');
 }
 
 dispatch('/sell', 'sell');
 function sell() {
-  return html('sell.html');
+    return html('sell.html');
 }
+
+// ==== API
+
+dispatch('/api_notify', 'notify');
+function notify() {
+    return json(
+        array(
+            'is_notify' => true
+        )
+    );
+}
+
+dispatch('/api_buy', 'buy');
+function buy() {
+    return json(
+        array(
+            'is_success' => true
+        )
+    );
+}
+
 
 run();
