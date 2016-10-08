@@ -1,0 +1,15 @@
+body {
+    width: 300px;
+}
+
+#register_user_failure {
+    color: red;
+}
+
+.display_none {
+    display: none;
+}
+
+.display_block {
+    display: block;
+}

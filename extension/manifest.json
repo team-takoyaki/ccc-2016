@@ -1,0 +1,24 @@
+{
+    "name": "Katte",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "Katteとは圧倒的健康を支援するためのサービスです",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Katte",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "jquery.min.js",
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "permissions": ["gcm", "notifications", "http://katte.party/*"]
+}
