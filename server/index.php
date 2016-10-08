@@ -41,9 +41,91 @@ function index() {
     return html('index.html');
 }
 
-dispatch('/sell', 'sell');
+dispatch_get('/sell', 'sell');
+dispatch_post('/sell', 'sell');
 function sell() {
-    return html('sell.html');
+    if (
+        isset($_REQUEST['item_name'])
+            &&
+        isset($_REQUEST['item_description'])
+            &&
+        isset($_REQUEST['mention_user_name'])
+            &&
+        isset($_REQUEST['price'])
+    ) {
+
+        try {
+            $pdo = get_pdo();
+
+            $sql = 'select id from katte_user where user_name = :user_name';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(':user_name' => $_REQUEST['mention_user_name']));
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // no mention user
+            if (!isset($result['id'])) {
+                return html('sell.html');
+            }
+
+            $mention_user_id = (int) $result['id'];
+            // get user
+            $sql = 'select id from katte_user where user_hash = :user_hash';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(':user_hash' => $_REQUEST['user_hash']));
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!isset($result['id'])) {
+                return html('sell.html');
+            }
+            $katte_user_id = (int) $result['id'];
+
+
+            $item_name = $_REQUEST['item_name'];
+            $item_description = $_REQUEST['item_description'];
+            $price = $_REQUEST['price'];
+            $image_name = hash('sha256', $item_name . $item_description);
+
+            // move
+            move_uploaded_file($_FILES["image"]["tmp_name"], "/tmp/" . $image_name);
+
+            chmod("/tmp/" .$image_name, 0644);
+            
+            $pdo->beginTransaction();
+            // create hash
+            $timestamp = strftime('%Y-%m-%d %H:%M:%S', time());
+            $insert_query = 'insert into katte_items set
+                katte_user_id = :katte_user_id,
+                item_name = :item_name,
+                item_description = :item_description,
+                image_name = :image_name,
+                price = :price,
+                mention_user_id = :mention_user_id,
+                created_at = :created_at,
+                updated_at = :updated_at
+            ';
+            $stmt = $pdo->prepare($insert_query);
+            $params = array(
+                ':katte_user_id' => $katte_user_id,
+                ':item_name' => $item_name,
+                ':item_description' => $item_description,
+                ':image_name' => $image_name,
+                ':mention_user_id' => $mention_user_id,
+                ':price' => $price,
+                ':created_at' => $timestamp,
+                ':updated_at' => $timestamp,
+            );
+            $ret = $stmt->execute($params);
+            $pdo->commit();
+
+            redirect("/");
+        } catch (PDOException $e) {
+            print $e->getMessage();
+            return html('sell.html');
+        }
+
+    } else {
+        return html('sell.html');
+    }
 }
 
 dispatch('/detail', 'detail');
