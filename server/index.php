@@ -66,17 +66,19 @@ function regist() {
 
     $pdo = get_pdo();
 
-    $cnt_query = 'select count(*) as cnt from katte_user where user_name = :user_name';
+    $cnt_query = 'select user_hash as cnt from katte_user where user_name = :user_name';
     $stmt = $pdo->prepare($cnt_query);
     $stmt->execute(array(':user_name' => $user_name));
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $stmt = null;
     $pdo = null;
-    if ($result['cnt'] > 0) {
-        return json(
-            get_code('fail')
+    if (isset($result['user_hash'])) {
+        $result = get_code('success');
+        $result['body'] = array(
+            'hash' => $result['user_hash']
         );
+        return json($result);
     }
 
     try {
