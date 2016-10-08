@@ -109,7 +109,7 @@ baseCell
 .btnPurchase{
   position: fixed;
   bottom: 5%;
-  right: 20%;
+  right: 11%;
   z-index: 8888;
 }
 .baseCell ul li{
@@ -182,13 +182,14 @@ baseCell
   color:#fff;
 }
 .useNameTxt{
-  width: 11.3%;
-  padding: 10px;
-  background-color: #000;
-  color:#fff;
-  position: absolute;
-  z-index: 5555;
-  opacity: 0.5;
+    width: 220px;
+    margin: 2px;
+    padding: 2px;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    z-index: 5555;
+    opacity: 0.5;
 }
 /*-------------------------------------
 footer
