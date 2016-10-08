@@ -134,6 +134,25 @@ function sell() {
                 ':updated_at' => $timestamp,
             );
             $ret = $stmt->execute($params);
+
+            $item_id = $pdo->lastInsertId();
+
+            $insert_query = 'insert into mentions set
+                from_katte_user_id = :from_katte_user_id,
+                to_katte_user_id = :to_katte_user_id,
+                item_id = :item_id,
+                created_at = :created_at,
+                updated_at = :updated_at
+            ';
+            $stmt = $pdo->prepare($insert_query);
+            $params = array(
+                ':from_katte_user_id' => $katte_user_id,
+                ':to_katte_user_id' => $mention_user_id,
+                ':item_id' => $item_id,
+                ':created_at' => $timestamp,
+                ':updated_at' => $timestamp,
+            );
+            $ret = $stmt->execute($params);
             $pdo->commit();
 
             redirect("/");
