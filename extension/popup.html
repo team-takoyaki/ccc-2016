@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Katte</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Katte</h1>
+    <div id="register_user_layout">
+      <p>まずはユーザー登録をしてください</p>
+      <p id="register_user_failure" class="display_none">名前とグレードを正しく入力してください</p>
+      <p>名前</p>
+      <p><input type="text" name="name" id="input_name"></p>
+      <p>グレード</p>
+      <p><select name="grade" id="input_grade">
+        <option value="1">A</option>
+        <option value="2">B</option>
+        <option value="3">C</option>
+        <option value="4">D</option>
+        <option value="5">E</option>
+      </select></p>
+      <button id="button_register">ユーザー登録</button>
+    </div>
+    <div id="already_register_user" class="display_none">
+      <p>ユーザー登録済みです</p>
+      <p><button id="button_open_katte">Katteを開く</button></p>
+      <p><button id="button_logout">ログアウト</button></p>
+    </div>
+    <div id="loading" class="display_none">
+      <p>ユーザー登録中...</p>
+    </div>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
+</html>
