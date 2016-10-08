@@ -336,3 +336,7 @@ modal.hmtl
 .display_none {
     display: none;
 }
+
+.imgSell {
+    max-height: 220px;
+}
