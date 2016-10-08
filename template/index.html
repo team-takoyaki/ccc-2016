@@ -67,7 +67,11 @@
                       <p class="dateStart"><?php echo $item['created_at']; ?></p>
                       <p class="dateTxt">UP DATE</p>
                     </div>
-                    <a class="btnSellOn">アイテム詳細</a>
+                    <?php   if ($item['is_purchased'] == 0) { ?>
+                    <p class="btnSellOn">アイテム詳細</p>
+                    <?php   } else { ?>
+                    <p class="btnSellOff">購入済み</p>
+                    <?php   } ?>
                   </a>
                 </li>
                 <?php } ?>

@@ -254,15 +254,13 @@ function notify() {
 }
 
 dispatch('/buy', 'buy');
+dispatch_post('/buy', 'buy');
 function buy() {
-  $itemId = $_REQUEST['itemId'];
+  $itemId = $_REQUEST['item_id'];
   try {
         $pdo = get_pdo();
         $pdo->beginTransaction();
-        // create hash
-        $user_hash = hash('sha256', $user_name . $user_grade . $regist_id);
-        $timestamp = strftime('%Y-%m-%d %H:%M:%S', time());
-        $udpate_query = 'update katte_items set is_purchased = :is_purchased where id = :item_id';
+        $update_query = 'update katte_items set is_purchased = :is_purchased where id = :item_id';
         $stmt = $pdo->prepare($update_query);
         $params = array(
             ':is_purchased' => 1,
