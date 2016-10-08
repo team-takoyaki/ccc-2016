@@ -38,6 +38,25 @@ function get_pdo() {
 
 dispatch('/', 'index');
 function index() {
+    $pdo = get_pdo();
+
+    $query = 'select * from katte_items inner join katte_user on katte_items.mention_user_id = katte_user.id';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $query = 'select katte_user.user_name,katte_items.image_name from katte_items inner join katte_user on katte_items.katte_user_id = katte_user.id;';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result_from_user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $item_info = array();
+    foreach ($result_from_user as $row) {
+        $item_info[$row['image_name']] = $row['user_name'];
+    }
+
+    set('items', $result);
+    set('item_info', $item_info);
     return html('index.html');
 }
 
