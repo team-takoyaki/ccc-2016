@@ -337,7 +337,30 @@ modal.hmtl
     display: none;
 }
 
+
 .imgSell {
     max-width: 220px;
     max-height: 220px;
 }
+
+#openSite{
+    width: 980px;
+    margin: 0 auto;
+    padding-top:67px;
+    text-align: center;
+}
+.openBtn{
+    width: 300px;
+    margin: 0 auto;
+}
+.infoTxt{
+    margin: 30px 0 30px; 
+    font-size: 18px;
+    color:#fff;
+}
+.attentionTtx{
+    margin: 5px 0 100px;
+    color:#fff;
+    font-size: 10px;
+}
+
