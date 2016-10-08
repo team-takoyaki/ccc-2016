@@ -15,7 +15,7 @@
     },
     "content_scripts": [{
         "matches": ["http://katte.party/*"],
-        "js": ["katte.js"]
+        "js": ["jquery.min.js", "katte.js"]
     }],
     "background": {
         "scripts": [
