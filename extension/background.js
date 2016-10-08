@@ -1,6 +1,8 @@
 const PROJECT_ID = '814287454709';
 const NOTIFICATION_ID = 'NOTIFICATION_ID';
 
+var itemId = 0;
+
 console.log('user_hash: ' + localStorage.getItem('USER_HASH'));
 
 var ButtonIndex = {
@@ -48,17 +50,15 @@ chrome.runtime.onMessage.addListener(
 chrome.gcm.onMessage.addListener(function(message) {
     chrome.notifications.clear(NOTIFICATION_ID);
 
+    itemId = message.data.item_id;
+
     chrome.notifications.create(NOTIFICATION_ID, {
         title: message.data.title,
         message: message.data.message,
         type: 'basic',
         iconUrl: 'icon.png',
         buttons: [{
-            title: "Yes",
-            iconUrl: 'icon.png'
-        }, {
-            title: "No",
-            iconUrl: 'icon.png'
+            title: "購入する",
         }]
     });
 });
@@ -66,11 +66,8 @@ chrome.gcm.onMessage.addListener(function(message) {
 chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
     if (NOTIFICATION_ID == notificationId) {
         if (ButtonIndex.OPEN == buttonIndex) {
-            window.open('http://google.co.jp/');
+            window.open('http://katte.party/#modal-' + itemId);
         }
         chrome.notifications.clear(notificationId);
     }
-});
-
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });

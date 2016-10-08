@@ -67,7 +67,7 @@
                       <p class="dateStart"><?php echo $item['created_at']; ?></p>
                       <p class="dateTxt">UP DATE</p>
                     </div>
-                    <p class="btnSellOn">アイテム詳細</p>
+                    <a class="btnSellOn">アイテム詳細</a>
                   </a>
                 </li>
                 <?php } ?>
@@ -109,7 +109,11 @@
             <?php } ?>
             <p class="ttlItem"><?php echo $item['item_name']; ?></p>              
             <p class="itemTxt"><?php echo $item['item_description']; ?></p>
-            <a class="btnSellOn modalBtn">奪い取る</a>
+            <form method="post" action="/buy">
+              <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
+              <input type="hidden" name="user_hash" value="" id="user_hash">
+              <button type="submit" class="btnSellOn modalBtn">購入する</button>
+            </form>
           </div>
         </div>
       </div>
