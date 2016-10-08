@@ -93,7 +93,7 @@ header{
   transition: 0.3s linear;
 }
 #secondMenu{
-  width: 100%;
+  width: 1000px;
   padding-top: 72px;
   background-color: #e50076;
 }
