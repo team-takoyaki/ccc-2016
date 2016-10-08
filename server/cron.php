@@ -1,6 +1,6 @@
 <?php
 
-$server_key = 'AIzaSyAIcfdASSRX96kR8njsk3POc1GOxc2rb9k';
+$server_key = 'SERVE_KEY';
 $dbh = 'mysql:host=localhost;dbname=db_katte;charset=utf8';
 
 $pdo = new PDO(
@@ -21,17 +21,17 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($rows as $row) {
     $item_id = $row['item_id'];
     $registration_id = $row['registration_id'];
-$cmd = 'curl --header "Authorization: key=AIzaSyAIcfdASSRX96kR8njsk3POc1GOxc2rb9k" '
-     . ' --header Content-Type:"application/json" '
-     . ' https://fcm.googleapis.com/fcm/send '
-     . '-d "{ '
-     . '     \"data\": {'
-     . '        \"title\": \"北野ビヨンド\", '
-     . '        \"message\": \"メンションされたぞばかやろう\", '
-     . '       \"item_id\": \"' . $item_id . '\"'
-     . '   }, '
-     . '    \"to\": \"' . $registration_id . '\"'
-     . ' }'
-     . '"';
+    $cmd = 'curl --header "Authorization: key=' . $sever_key . '" '
+        . ' --header Content-Type:"application/json" '
+        . ' https://fcm.googleapis.com/fcm/send '
+        . '-d "{ '
+        . '     \"data\": {'
+        . '        \"title\": \"北野ビヨンド\", '
+        . '        \"message\": \"メンションされたぞばかやろう\", '
+        . '       \"item_id\": \"' . $item_id . '\"'
+        . '   }, '
+        . '    \"to\": \"' . $registration_id . '\"'
+        . ' }'
+        . '"';
     exec($cmd);
 }
