@@ -1,6 +1,8 @@
 const PROJECT_ID = '814287454709';
 const NOTIFICATION_ID = 'NOTIFICATION_ID';
 
+console.log('user_hash: ' + localStorage.getItem('USER_HASH'));
+
 var ButtonIndex = {
     OPEN: 0,
     CLOSE: 1
@@ -23,6 +25,10 @@ var registerUserToServer = function(name, grade, registrationId, sendResponse) {
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
+        if (request.method == 'user_hash') {
+            sendResponse({user_hash: localStorage.getItem('USER_HASH')});
+            return;
+        }
         if (request.name == null || request.grade == null) {
             sendResponse({code: 400});
             return;
@@ -64,4 +70,7 @@ chrome.notifications.onButtonClicked.addListener(function(notificationId, button
         }
         chrome.notifications.clear(notificationId);
     }
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });

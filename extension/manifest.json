@@ -13,6 +13,10 @@
         "default_title": "Katte",
         "default_popup": "popup.html"
     },
+    "content_scripts": [{
+        "matches": ["http://katte.party/*"],
+        "js": ["jquery.min.js", "katte.js"]
+    }],
     "background": {
         "scripts": [
             "jquery.min.js",

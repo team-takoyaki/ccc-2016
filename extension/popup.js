@@ -56,6 +56,7 @@ $('#button_logout').click(function(event) {
     localStorage.removeItem(KEY_USER_HASH);
     $("#already_register_user").hide();
     $("#register_user_layout").show();
+    window.open('http://katte.party');
 });
 
 var userHash = localStorage.getItem(KEY_USER_HASH);
