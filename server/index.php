@@ -260,7 +260,7 @@ function buy() {
   try {
         $pdo = get_pdo();
         $pdo->beginTransaction();
-        $udpate_query = 'update katte_items set is_purchased = :is_purchased where id = :item_id';
+        $update_query = 'update katte_items set is_purchased = :is_purchased where id = :item_id';
         $stmt = $pdo->prepare($update_query);
         $params = array(
             ':is_purchased' => 1,
