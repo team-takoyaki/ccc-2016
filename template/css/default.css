@@ -251,10 +251,15 @@ select{
   height: 100px;
 }
 .sellFormTtl{
-  margin: 10px 0;
+  margin: 20px 0 5px;
   font-size: 15px;
   color:#e50076;
 }
+.sellCenterWrap {
+    margin: 100px auto;
+    width: 500px;
+}
+
 .sellRightWarp{
   float:right;
   width: 50%;
@@ -263,7 +268,8 @@ select{
 .sellFormOff{
   display: block;
   width: 30%;
-  margin-top: 50px;
+  text-align: center;
+  margin: 50px auto;
   padding: 10px 0;
   text-align: center;
   background-color: #2c2b1c;
