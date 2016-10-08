@@ -256,6 +256,24 @@ function notify() {
 dispatch('/buy', 'buy');
 function buy() {
   $itemId = $_REQUEST['itemId'];
+  try {
+        $pdo = get_pdo();
+        $pdo->beginTransaction();
+        // create hash
+        $user_hash = hash('sha256', $user_name . $user_grade . $regist_id);
+        $timestamp = strftime('%Y-%m-%d %H:%M:%S', time());
+        $udpate_query = 'update katte_items set is_purchased = :is_purchased where id = :item_id';
+        $stmt = $pdo->prepare($update_query);
+        $params = array(
+            ':is_purchased' => 1,
+            ':item_id' => $itemId
+        );
+        $ret = $stmt->execute($params);
+        $pdo->commit();
+
+        $result = get_code('success');
+    } catch (PDOException $e) {
+    }
   redirect("/");
 }
 
