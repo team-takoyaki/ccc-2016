@@ -110,7 +110,7 @@
             <p class="ttlItem"><?php echo $item['item_name']; ?></p>              
             <p class="itemTxt"><?php echo $item['item_description']; ?></p>
             <form method="post" action="/buy">
-              <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
+              <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
               <input type="hidden" name="user_hash" value="" id="user_hash">
               <a class="btnSellOn modalBtn">購入する</a>
             </form>
