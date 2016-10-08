@@ -331,3 +331,7 @@ modal.hmtl
 .sellFormDescription {
     height: 100px;
 }
+
+.display_none {
+    display: none;
+}
