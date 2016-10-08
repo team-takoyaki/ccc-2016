@@ -2,9 +2,9 @@
 
 require_once 'lib/limonade.php';
 
-dispatch('/', 'hello');
-function hello() {
-    return 'Hello world!';
+dispatch('/', 'index');
+function index() {
+  return html('index.html');
 }
 
 run();
