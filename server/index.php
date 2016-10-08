@@ -22,6 +22,11 @@ function sell() {
     return html('sell.html');
 }
 
+dispatch('/detail', 'detail');
+function detail() {
+    return html('detail.html');
+}
+
 // ==== API
 
 dispatch('/api_notify', 'notify');
