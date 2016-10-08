@@ -260,9 +260,6 @@ function buy() {
   try {
         $pdo = get_pdo();
         $pdo->beginTransaction();
-        // create hash
-        $user_hash = hash('sha256', $user_name . $user_grade . $regist_id);
-        $timestamp = strftime('%Y-%m-%d %H:%M:%S', time());
         $udpate_query = 'update katte_items set is_purchased = :is_purchased where id = :item_id';
         $stmt = $pdo->prepare($update_query);
         $params = array(
