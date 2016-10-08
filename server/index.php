@@ -256,7 +256,7 @@ function notify() {
 dispatch('/buy', 'buy');
 dispatch_post('/buy', 'buy');
 function buy() {
-  $itemId = $_REQUEST['itemId'];
+  $itemId = $_REQUEST['item_id'];
   try {
         $pdo = get_pdo();
         $pdo->beginTransaction();
