@@ -27,11 +27,6 @@ function detail() {
     return html('detail.html');
 }
 
-dispatch('/item/:item_id', 'item');
-function item($item_id) {
-  return "Item $item_id";
-}
-
 // ==== API
 
 dispatch('/api_notify', 'notify');
