@@ -40,7 +40,7 @@ dispatch('/', 'index');
 function index() {
     $pdo = get_pdo();
 
-    $query = 'select * from katte_items inner join katte_user on katte_items.mention_user_id = katte_user.id';
+    $query = 'select * from katte_items inner join katte_user on katte_items.mention_user_id = katte_user.id order by katte_items.id desc';
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
