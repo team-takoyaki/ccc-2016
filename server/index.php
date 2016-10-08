@@ -234,14 +234,10 @@ function notify() {
     );
 }
 
-dispatch('/api_buy', 'buy');
+dispatch('/buy', 'buy');
 function buy() {
-    return json(
-        array(
-            'is_success' => true
-        )
-    );
+  $itemId = $_REQUEST['itemId'];
+  redirect("/");
 }
-
 
 run();
