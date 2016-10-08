@@ -1,106 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <title>katte</title>
-  <meta name="format-detection" content="telephone=no">
-  <!--電話番号などを勝手にリンクにしないよう-->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--IE最新バージョンで対応するよ-->
-  <meta name="viewport" content="width=1000">
-  <link rel="styleSheet" href="css/default.css">
-  <link rel="styleSheet" href="css/reset.css">
-  <meta name="apple-mobile-web-app-title" content="Katte">
-  <!--スマホでホームに追加した時に使うよ-->
-</head>
-<body>
-  <header>
-    <div id="menuWrapper" class="clearfix">
-      <div id="menuWapperRight" class="clearfix">
-        <h1 id="headerLogoImage">
-          <a href="/">Katte</a>
-        </h1>
+  <head>
+    <meta charset="utf-8" />
+    <title>Katte - Katteで買って圧倒的に健康になろう</title>
+    <meta name="format-detection" content="telephone=no">
+    <!--電話番号などを勝手にリンクにしないよう-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--IE最新バージョンで対応するよ-->
+    <meta name="viewport" content="width=1000">
+    <link rel="styleSheet" href="css/default.css">
+    <link rel="styleSheet" href="css/reset.css">
+    <meta name="apple-mobile-web-app-title" content="Katte">
+    <!--スマホでホームに追加した時に使うよ-->
+  </head>
+  <body>
+    <header>
+      <div id="menuWrapper" class="clearfix">
+        <div id="menuWapperRight" class="clearfix">
+          <h1 id="headerLogoImage">
+            <a href="/">Katte</a>
+          </h1>
+        </div>
+        <ul class="clearfix">
+          <li>
+            <a href="/sell">
+              <img src="img/btn_sell_on.png" alt="出品する" height="50px">
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src="img/btn_all_off.png" alt="一覧" height="50px">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/btn_fb.png" alt="facebook" height="50px">
+            </a>
+          </li>
+        </ul>
       </div>
-      <ul class="clearfix">
-        <li>
-          <a href="sell.html">
-            <img src="img/btn_sell_on.png" alt="出品する" height="50px">
-          </a>
-        </li>
-        <li>
-          <a href="index.html">
-            <img src="img/btn_all_off.png" alt="一覧" height="50px">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/btn_mypage_off.png" alt="マイページ" height="50px">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/btn_fb.png" alt="facebook" height="50px">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <nav id="secondMenu">
-    <div id="secondMenuWrapper" class="clearfix">
-      <img src="img/ttl.png" alt="出品" height="30px">
-    </div>
-  </nav>
-  <div id="body">
-    <div id="content">
-      <article class="baseCell clearfix">
-        <section class="sellLeftWarp">
-          <form>
-            <p>
-              <a>こちらに画像を<br>いれてください</a>
-            </p>
+    </header>
+    <nav id="secondMenu">
+      <div id="secondMenuWrapper" class="clearfix">
+        <img src="img/ttl.png" alt="出品" height="30px">
+      </div>
+    </nav>
+    <div id="body">
+      <div id="content">
+        <article class="baseCell clearfix">
+          <form method="post" actioin="/sell">
+            <section class="sellCenterWrap">
+              <dl>
+                <dt class="sellFormTtl">アイテム名</dt>
+                <dd>
+                  <input class="sellForm" type="text" name="item_name" placeholder="10文字くらいでアイテム名をつけてね">
+                </dd>
+                <dt class="sellFormTtl">アイテム説明</dt>
+                <dd>
+                  <textarea name="item_description" placeholder="100文字くらいで説明を入れてね" class="sellForm sellFormDescription"></textarea>
+                </dd>
+                <dt class="sellFormTtl">アイテム画像を選択</dt>
+                <dd>
+                  <input type="file" name="image">
+                </dd>
+                <dt class="sellFormTtl">売りつける人を選択</dt>
+                <dd>
+                  <select name="mention_user_name">
+                    <option value="瀬川">瀬川</option>
+                    <option value="瀬川">瀬川</option>
+                  </select>
+                </dd>
+                <dt class="sellFormTtl">金額入力</dt>
+                <dd>
+                  <input class="sellForm" type="text" name="price" value="0">
+                </dd>
+                <dd>
+                  <input class="sellFormOff" type="submit" value="送信">
+                </dd>
+              </dl>
+            </section>
           </form>
-        </section>
-        <section class="sellRightWarp">
-          <dl>
-            <dt class="sellFormTtl">アイテム名</dt>
-            <dd>
-              <form>
-                <input class="sellForm" type="text" value="30文字以内でタイトルをつけてね">
-              </form>
-            </dd>
-            <dt class="sellFormTtl">アイテム説明</dt>
-            <dd>
-              <form>
-                <input class="sellForm sellFormItemDes" type="text" value="60文字以内でタイトルをつけてね">
-              </form>
-            </dd>
-            <dt class="sellFormTtl">売りつける人を選択</dt>
-            <dd>
-              <form>
-                <select>
-                  <option value="name">瀬川</option>
-                  <option value="name">瀬川</option>
-                </select>
-              </form>
-            </dd>
-            <dt class="sellFormTtl">金額入力</dt>
-            <dd>
-              <form>
-                <input class="sellForm" type="text" value="¥0">
-              </form>
-            </dd>
-            <dd>
-              <form>
-                <input class="sellFormOff" type="button" placeholder="¥0" value="送信">
-              </form>
-            </dd>
-          </dl>
-        </section>
-      </article>
-    </div><!--#content -->
-  </div><!--#body-->
-  <section class="footer">
-    <div class="copylight">COPYRIGHT © Office KITANO CO.,LTD. ALL RIGHTS RESERVED.</div>
-  </section>
-</body>
+        </article>
+      </div><!--#content -->
+    </div><!--#body-->
+    <section class="footer">
+      <div class="copylight">COPYRIGHT © Office KITANO CO.,LTD. ALL RIGHTS RESERVED.</div>
+    </section>
+  </body>
 </html>

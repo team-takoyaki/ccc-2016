@@ -1,192 +1,204 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <title>katte</title>
-  <meta name="format-detection" content="telephone=no">
-  <!--電話番号などを勝手にリンクにしないよう-->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--IE最新バージョンで対応するよ-->
-  <meta name="viewport" content="width=1000">
-  <link rel="styleSheet" href="css/default.css">
-  <link rel="styleSheet" href="css/reset.css">
-  <meta name="apple-mobile-web-app-title" content="Katte">
-  <!--スマホでホームに追加した時に使うよ-->
-</head>
-<body>
-  <header>
-    <div id="menuWrapper" class="clearfix">
-      <div id="menuWapperRight" class="clearfix">
-        <h1 id="headerLogoImage">
-          <a href="/">Katte</a>
-        </h1>
+  <head>
+    <meta charset="utf-8" />
+    <title>Katte - Katteで買って圧倒的に健康になろう</title>
+    <meta name="format-detection" content="telephone=no">
+    <!--電話番号などを勝手にリンクにしないよう-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--IE最新バージョンで対応するよ-->
+    <meta name="viewport" content="width=1000">
+    <link rel="styleSheet" href="css/default.css">
+    <link rel="styleSheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/remodal.css">
+    <link rel="stylesheet" href="css/remodal-default-theme.css">
+    <meta name="apple-mobile-web-app-title" content="Katte">
+    <!--スマホでホームに追加した時に使うよ-->
+  </head>
+  <body>
+    <header>
+      <div id="menuWrapper" class="clearfix">
+        <div id="menuWapperRight" class="clearfix">
+          <h1 id="headerLogoImage">
+            <a href="/">Katte</a>
+          </h1>
+        </div>
+        <ul class="clearfix">
+          <li>
+            <a href="/sell">
+              <img src="img/btn_sell_off.png" alt="出品する" height="50px">
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src="img/btn_all_on.png" alt="一覧" height="50px">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/btn_fb.png" alt="facebook" height="50px">
+            </a>
+          </li>
+        </ul>
       </div>
-      <ul class="clearfix">
-        <li>
-          <a href="/sell">
-            <img src="img/btn_sell_off.png" alt="出品する" height="50px">
-          </a>
-        </li>
-        <li>
-          <a href="index.html">
-            <img src="img/btn_all_on.png" alt="一覧" height="50px">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/btn_mypage_off.png" alt="マイページ" height="50px">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/btn_fb.png" alt="facebook" height="50px">
-          </a>
-        </li>
-      </ul>
+    </header>
+    <nav id="secondMenu">
+      <div id="secondMenuWrapper" class="clearfix">
+        <img src="img/ttl_all_item.png" alt="一覧" height="30px">
+      </div>
+    </nav>
+    <div id="body">
+      <a href="/sell"><img src="img/btn_purchase.png" alt="購入する" class="btnPurchase" height="150px"></a>
+      <div id="content">
+        <article class="baseCell">
+          <section id="allItem">
+            <ul class="clearfix">
+              <li>
+                <a href="#modal-1">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOn">アイテム詳細</p>
+                </a>
+              </li>
+              <li class="itemOffWrap">
+                <a href="/item/2">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOff">売り切れ</p>
+                </a>
+              </li>
+              <li>
+                <a href="/item/3">
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOn">アイテム詳細</p>
+                </a>
+              </li>
+              <li class="itemOffWrap">
+                <a href="/item/4">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOff">売り切れ</p>
+                </a>
+              </li>
+              <li>
+                <a href="/item/5">
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOn">アイテム詳細</p>
+                </a>
+              </li>
+              <li class="itemOffWrap">
+                <a href="/item/6">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOff">売り切れ</p>
+                </a>
+              </li>
+              <li>
+                <a href="/item/7">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOn">アイテム詳細</p>
+                </a>
+              </li>
+              <li class="itemOffWrap">
+                <a href="/item/8">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOff">売り切れ</p>
+                </a>
+              </li>
+              <li>
+                <a href="/item/9">
+                  <p class="useNameTxt">瀬川じゃなかった</p>
+                  <img src="img/dummy.png" alt="これはdummy" class="imgSell">
+                  <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
+                  <div class="statusDateWrap clearfix">
+                    <p class="dateStart">2016/12/12</p>
+                    <p class="dateTxt">UP DATE</p>
+                  </div>
+                  <p class="btnSellOn">アイテム詳細</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <!--
+              むーにゃー　むーにゃ
+              　　　　　　　lヽ、　　　 　 　 　 　 /ヽ
+              　　　　　　　 　 　i!　ﾞヽ、 　 　　　　／ 　ﾞi!　　　　　 ..,,　.,,.;;''⌒ヽ
+              　　　　 　 　 　 　l　　　 ゝ-─‐-／'　　　 i!　 , ,__,,;'"　 "';　　　 ,ﾉ
+              　　　　　　　　　,／"　　　　　　　 　 　　　i!''"　 ....ﾞ'';;..,,;;　　,,Y"
+              　　　　　　　　,/'　　　　　　　　　　　　　 〈　　　　　　　　　'i;;- ､,,　　
+              　　　　 　 　　i'　　　　　　　    　　　　 'i,　　　　　　　　 　　 　 ﾞ"ヽ、　
+              　　　 　 　 　 i!　●　　　　　●　　 　　　 ,'i　　　　　　　　　　 　　　　ﾞ）
+              　　　　　　　　'i,:::(_____） 　 　:::::::　　,/　　　　'　　　　　ﾞ",;''i,-‐'"
+              　　　　　,,-‐''"ヽ､ 　 　　　　　　　 ,,-‐　　　　　　　　　,..;;;ﾞ"
+              　　　　（　　　　,,, '' 　　　　 ,,.-‐''"　　　　　　　,,'"´｀`´
+              　　　　 ヽ,..-‐''　　　 ,.-‐''"　　　　　　ノ-‐''"´ 　
+              　　　　　　　　　　　（　　　　　　 ,. -'"
+              　　　　　　　　　　　 ヽ、,,.. -‐'''"
+            -->
+        </article>
+      </div><!--#content -->
+    </div><!--#body-->
+    <section class="footer">
+      <div class="copylight">COPYRIGHT © Office KITANO CO.,LTD. ALL RIGHTS RESERVED.</div>
+    </section>
+    <div class="remodal-bg"></div>
+    <div class="remodal" data-remodal-id="modal-1">
+          <div class="modalWrap">
+            <div class="modalColumn">
+                <img src="img/btn_popup.png" class="closeButton" data-remodal-action="close">
+                <img  class="ttlModal" src="img/ttl_buy.png" alt="購入">
+                <img class="dummyImage" src="img/dummy.png" alt="ダミー画像だよー">
+                <p class="userName">瀬川です</p>
+                <p class="ttlItem">ああああああああああああああ</p>              
+                <p class="itemTxt">ああああああああああああああああああああああああああああああああああ</p>
+                <a class="btnSellOn modalBtn">奪い取る</a>
+            </div>
+          </div>
     </div>
-  </header>
-  <nav id="secondMenu">
-    <div id="secondMenuWrapper" class="clearfix">
-      <img src="img/ttl_all_item.png" alt="一覧" height="30px">
-    </div>
-  </nav>
-  <div id="body">
-    <a href="/sell"><img src="img/btn_purchase.png" alt="購入する" class="btnPurchase" height="150px"></a>
-    <div id="content">
-      <article class="baseCell">
-        <section id="allItem">
-          <ul class="clearfix">
-            <li>
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOn">購入する</p>
-              </a>
-            </li>
-            <li class="itemOffWrap">
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOff">売り切れ</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOn">購入する</p>
-              </a>
-            </li>
-            <li class="itemOffWrap">
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOff">売り切れ</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOn">購入する</p>
-              </a>
-            </li>
-            <li class="itemOffWrap">
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOff">売り切れ</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOn">購入する</p>
-              </a>
-            </li>
-            <li class="itemOffWrap">
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOff">売り切れ</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p class="useNameTxt">瀬川じゃなかった</p>
-                <img src="img/dummy.png" alt="これはdummy" class="imgSell">
-                <p class="ttlItem">ああああああああああああああああああああああああああああああ</p>
-                <div class="statusDateWrap clearfix">
-                  <p class="dateStart">2016/12/12</p>
-                  <p class="dateTxt">UP DATE</p>
-                </div>
-                <p class="btnSellOn">購入する</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <!--
-                  むーにゃー　むーにゃ
-        　　　　　　　lヽ、　　　 　 　 　 　 /ヽ
-　　　　　　　 　 　i!　ﾞヽ、 　 　　　　／ 　ﾞi!　　　　　 ..,,　.,,.;;''⌒ヽ
-　　　　 　 　 　 　l　　　 ゝ-─‐-／'　　　 i!　 , ,__,,;'"　 "';　　　 ,ﾉ
-　　　　　　　　　,／"　　　　　　　 　 　　　i!''"　 ....ﾞ'';;..,,;;　　,,Y"
-　　　　　　　　,/'　　　　　　　　　　　　　 〈　　　　　　　　　'i;;- ､,,　　
-　　　　 　 　　i'　　　　　　　    　　　　 'i,　　　　　　　　 　　 　 ﾞ"ヽ、　
-　　　 　 　 　 i!　●　　　　　●　　 　　　 ,'i　　　　　　　　　　 　　　　ﾞ）
-　　　　　　　　'i,:::(_____） 　 　:::::::　　,/　　　　'　　　　　ﾞ",;''i,-‐'"
-　　　　　,,-‐''"ヽ､ 　 　　　　　　　 ,,-‐　　　　　　　　　,..;;;ﾞ"
-　　　　（　　　　,,, '' 　　　　 ,,.-‐''"　　　　　　　,,'"´｀`´
-　　　　 ヽ,..-‐''　　　 ,.-‐''"　　　　　　ノ-‐''"´ 　
-　　　　　　　　　　　（　　　　　　 ,. -'"
-　　　　　　　　　　　 ヽ、,,.. -‐'''"
-        -->
-      </article>
-    </div><!--#content -->
-  </div><!--#body-->
-  <section class="footer">
-    <div class="copylight">COPYRIGHT © Office KITANO CO.,LTD. ALL RIGHTS RESERVED.</div>
-  </section>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-</body>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/remodal.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
 </html>
