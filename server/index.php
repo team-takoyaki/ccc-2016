@@ -254,6 +254,7 @@ function notify() {
 }
 
 dispatch('/buy', 'buy');
+dispatch_post('/buy', 'buy');
 function buy() {
   $itemId = $_REQUEST['itemId'];
   try {
